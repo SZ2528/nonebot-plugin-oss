@@ -56,7 +56,7 @@ async def _(bot: Bot, event: MessageEvent):
     if response.status_code == 200:
         # response.json() 就是access_token
         # 存储access_token，而且不同user_id都有各自的access_token
-        access_token_dir = store.get_config_dir() / "nonebot-plugin-osu" / "access_token.json"
+        access_token_dir = store.get_plugin_data_dir / "access_token.json"
         access_token_dir.parent.mkdir(parents=True, exist_ok=True)
         with open(access_token_dir, '+') as f:
             access_tokens = json.load(f)
