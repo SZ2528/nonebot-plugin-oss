@@ -13,8 +13,8 @@ from nonebot.adapters.onebot.v11 import (
 
 # 从nonebot配置读入client_id和client_secret
 plugin_config = get_plugin_config(Config)
-client_id = plugin_config.oss_api_client_id
-client_secret = plugin_config.oss_api_client_secret
+client_id = plugin_config.osu_api_client_id
+client_secret = plugin_config.osu_api_client_secret
 
 seasonalbg_matcher = on_command("seasonalbg", aliases={"季节背景"}, priority = 5)
 

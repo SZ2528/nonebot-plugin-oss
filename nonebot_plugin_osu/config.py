@@ -4,6 +4,6 @@ from typing import Set
 
 class Config(BaseModel):
     superusers: Set[str]
-    oss_api_client_id: int
-    oss_api_client_secret: str
-    oss_command_priority: int = 10
+    osu_api_client_id: int
+    osu_api_client_secret: str
+    osu_command_priority: int = 10
