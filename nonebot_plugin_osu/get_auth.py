@@ -18,8 +18,8 @@ import json
 
 # 从nonebot配置读入client_id和client_secret
 plugin_config = get_plugin_config(Config)
-client_id = plugin_config.oss_api_client_id
-client_secret = plugin_config.oss_api_client_secret
+client_id = plugin_config.osu_api_client_id
+client_secret = plugin_config.osu_api_client_secret
 
 getauth_matcher = on_command("osugetauth", aliases={"osu获取授权", "获取osu授权"})
 @getauth_matcher.handle()
