@@ -1,7 +1,7 @@
 from nonebot import get_plugin_config
 from nonebot.plugin import PluginMetadata
 from .config import Config
-from . import seasonalbg
+from . import get_auth, seasonalbg
 
 __plugin_meta__ = PluginMetadata(
     name="osu!搜索歌曲",
@@ -15,3 +15,4 @@ __plugin_meta__ = PluginMetadata(
 
 config = get_plugin_config(Config)
 
+# ()
