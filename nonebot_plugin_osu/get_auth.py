@@ -25,8 +25,8 @@ safe_mode = plugin_config.osu_auth_safe_mode
 getauth_matcher = on_command("osugetauth", aliases={"osu获取授权", "获取osu授权"})
 @getauth_matcher.handle()
 async def _(bot: Bot, event: MessageEvent):
-    if safe_mode and MessageEvent not is PrivateMessageEvent:
-        getauth_matcher.finish("请在私聊中使用")
+    if safe_mode and event not is PrivateMessageEvent:
+        await getauth_matcher.finish("请在私聊中使用")
     params = {
         'client_id': client_id,
         # 'redirect_uri': REDIRECT_URI,
@@ -39,8 +39,8 @@ async def _(bot: Bot, event: MessageEvent):
 gettoken_matcher = on_startswith("https://osu.ppy.sh/oauth/authorize", block = True)
 @gettoken_matcher.handle()
 async def _(bot: Bot, event: MessageEvent):
-    if safe_mode and MessageEvent not is PrivateMessageEvent:
-        getauth_matcher.finish("请在私聊中使用")
+    if safe_mode and event not is PrivateMessageEvent:
+        await getauth_matcher.finish("请在私聊中使用")
     # 解析url中的code参数和state参数
     url = event.get_plaintext()
     code = url.split("code=")[1].split("&")[0]
